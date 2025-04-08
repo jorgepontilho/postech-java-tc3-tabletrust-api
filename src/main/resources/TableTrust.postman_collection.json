@@ -1,0 +1,686 @@
+{
+	"info": {
+		"_postman_id": "1e5f084e-ff71-4ff6-b1f5-b24ebc71da82",
+		"name": "Fiap - Tech Challenge - API TableTrust Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15611332"
+	},
+	"item": [
+		{
+			"name": "1 - Restaurants",
+			"item": [
+				{
+					"name": "1.0 Create New Restaurant",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Paris 6\",\r\n    \"address\": \"Alameda Tietê, 279 - Jardim Paulista\",\r\n    \"kitchenType\":\"francesa\",\r\n    \"openingTime\": \"18:00:00\",\r\n    \"closingTime\": \"00:00:00\",\r\n    \"availableCapacity\": 150\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/restaurants",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.1 Get Restaurants By Name, Address, kitchenType",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/restaurants?name=Paris 6",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Paris 6"
+								},
+								{
+									"key": "address",
+									"value": "Tietê",
+									"disabled": true
+								},
+								{
+									"key": "kitchenType",
+									"value": "vegetariano",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.2 Get Restaurant by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/restaurants/2b2806e3-2aee-44bf-a0fe-a3583e73b329",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"restaurants",
+								"2b2806e3-2aee-44bf-a0fe-a3583e73b329"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.3 Update Restaurant by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Paris 6 (Original)\",\r\n    \"address\": \"Alameda Tietê, 279 - Jardim Paulista\",\r\n    \"kitchenType\":\"francesa\",\r\n    \"openingTime\": \"18:00:00\",\r\n    \"closingTime\": \"00:00:00\",\r\n    \"availableCapacity\": 150\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/restaurants/2b2806e3-2aee-44bf-a0fe-a3583e73b329",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"restaurants",
+								"2b2806e3-2aee-44bf-a0fe-a3583e73b329"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.4 Delete Restaurant by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/restaurants/2b2806e3-2aee-44bf-a0fe-a3583e73b329",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"restaurants",
+								"2b2806e3-2aee-44bf-a0fe-a3583e73b329"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2 - Customer",
+			"item": [
+				{
+					"name": "2.0 Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Tiago\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/customers",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.1 Find All Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/customers/",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"customers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.2 Find Customer By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/customers/7f19c19e-7078-4385-b75a-7fee0510612e",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"customers",
+								"7f19c19e-7078-4385-b75a-7fee0510612e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.3 Update Customer By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"7f19c19e-7078-4385-b75a-7fee0510612e\",\r\n    \"nome\": \"Tiago Maffi\"\r\n}\r\n\r\n//Nesta chamada é necessário que o ID esteja presente tanto na URI quanto no body",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/customers/7f19c19e-7078-4385-b75a-7fee0510612e",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"customers",
+								"7f19c19e-7078-4385-b75a-7fee0510612e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.4 Delete Customer By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/customers/199dd905-215c-4c13-a5bc-d94646ae05c2",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"customers",
+								"199dd905-215c-4c13-a5bc-d94646ae05c2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3 - Reservations",
+			"item": [
+				{
+					"name": "3.0 Create Reservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"restaurantId\": \"7c76e534-14b4-4875-b067-230f51b8638e\",\r\n  \"customerId\": \"40ab6fc7-f71f-420e-873f-40a9f1a0daff\",\r\n  \"reservationDate\": \"2024-03-24 10:12:00\",\r\n  \"quantity\": 2,\r\n  \"approved\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/reservations",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.1 Find All Reservations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/reservations",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.2 Update Reservation By Id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"f330792c-a85d-4643-a0f7-0c2e2d6eba42\",\r\n  \"restaurantId\": \"7c76e534-14b4-4875-b067-230f51b8638e\",\r\n  \"customerId\": \"40ab6fc7-f71f-420e-873f-40a9f1a0daff\",\r\n  \"reservationDate\": \"2024-03-25 10:12:00\",\r\n  \"quantity\": 2,\r\n  \"approved\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/reservations/f330792c-a85d-4643-a0f7-0c2e2d6eba42",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"reservations",
+								"f330792c-a85d-4643-a0f7-0c2e2d6eba42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.3 Find Reservation By Customer Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/reservations?customerId=40ab6fc7-f71f-420e-873f-40a9f1a0daff",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"reservations"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "40ab6fc7-f71f-420e-873f-40a9f1a0daff"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.5 Find Reservation By Restaurant Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/reservations?restaurantId=7c76e534-14b4-4875-b067-230f51b8638e",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"reservations"
+							],
+							"query": [
+								{
+									"key": "restaurantId",
+									"value": "7c76e534-14b4-4875-b067-230f51b8638e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.6 Delete Reservation By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/reservations/f330792c-a85d-4643-a0f7-0c2e2d6eba42",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"reservations",
+								"f330792c-a85d-4643-a0f7-0c2e2d6eba42"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4 - Feedback",
+			"item": [
+				{
+					"name": "4.0 Create Feedback",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"restaurantId\": \"7c76e534-14b4-4875-b067-230f51b8638e\",\r\n  \"customerId\": \"40ab6fc7-f71f-420e-873f-40a9f1a0daff\",\r\n  \"reservationId\": \"f330792c-a85d-4643-a0f7-0c2e2d6eba42\",\r\n  \"comment\": \"Ótimo Restaurante, recomendo.\",\r\n  \"stars\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/feedbacks",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"feedbacks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.1 Find Feedback By Restaurant Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/feedbacks?restaurantId=59890d57-15a2-4a4f-826e-2b5890d61443",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"feedbacks"
+							],
+							"query": [
+								{
+									"key": "restaurantId",
+									"value": "59890d57-15a2-4a4f-826e-2b5890d61443"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.2 Find Feedback By Feedback Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/feedbacks/59890d57-15a2-4a4f-826e-2b5890d61443",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"feedbacks",
+								"59890d57-15a2-4a4f-826e-2b5890d61443"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.3 Find Feedback Stars By restaurant id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/feedbacks/stars/59890d57-15a2-4a4f-826e-2b5890d61443",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"feedbacks",
+								"stars",
+								"59890d57-15a2-4a4f-826e-2b5890d61443"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.4 Delete Feedback By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://fiap-tabletrust-api.onrender.com/feedbacks/59890d57-15a2-4a4f-826e-2b5890d61443",
+							"protocol": "https",
+							"host": [
+								"fiap-tabletrust-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"feedbacks",
+								"59890d57-15a2-4a4f-826e-2b5890d61443"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
