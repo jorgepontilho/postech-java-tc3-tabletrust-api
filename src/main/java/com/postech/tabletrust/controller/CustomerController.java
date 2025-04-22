@@ -75,7 +75,7 @@ public class CustomerController {
         }
     }
 
-    @GetMapping("/")
+    @GetMapping
     @Operation(summary = "Request for list all customers", responses = {
             @ApiResponse(description = "Customer's list", responseCode = "200")
     })
