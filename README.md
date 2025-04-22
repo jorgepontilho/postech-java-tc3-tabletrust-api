@@ -27,7 +27,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias e bibliotecas:
 
 ## Documentação
 A Collection utilizada no Postman está disponível na URL:
-https://github.com/brunoguerra86/fiap-tabletrust-api/blob/main/src/main/resources/TableTrust.postman_collection.json
+https://github.com/jorgepontilho/postech-java-tc3-tabletrust-api/blob/main/src/main/resources/TableTrust.postman_collection.json
 
 A documentação detalhada da API está acessível na URL:
 https://fiap-tabletrust-api.onrender.com/swagger-ui/index.html
